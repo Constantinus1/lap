@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('quantity');
             $table->decimal('price', 10, 2);
             $table->timestamps();
+
+            $table->index('order_id');
+            $table->index('product_id');
         });
     }
 
