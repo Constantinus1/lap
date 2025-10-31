@@ -28,10 +28,6 @@ return new class extends Migration
             $table->index('product_id');
         });
 
-        Schema::table('payments', function (Blueprint $table) {
-            $table->index('order_id');
-        });
-
         Schema::table('cart_items', function (Blueprint $table) {
             $table->index('cart_id');
             $table->index('product_id');
@@ -57,10 +53,6 @@ return new class extends Migration
         Schema::table('order_items', function (Blueprint $table) {
             $table->dropIndex(['order_id']);
             $table->dropIndex(['product_id']);
-        });
-
-        Schema::table('payments', function (Blueprint $table) {
-            $table->dropIndex(['order_id']);
         });
 
         Schema::table('cart_items', function (Blueprint $table) {
